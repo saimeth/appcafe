@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mi_app/feature/home/presentation/page/page_failure.dart';
 import 'package:mi_app/feature/home/presentation/principal/views_initial.dart';
 import 'package:mi_app/feature/home/presentation/views/views_loading.dart';
 
@@ -13,10 +14,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: View_loading(),
+      home: View_failure(),
     );
   }
 }
+
+
 
 
 
