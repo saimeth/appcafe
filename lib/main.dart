@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mi_app/feature/home/presentation/views/views_initia.dart';
+import 'package:mi_app/feature/home/presentation/principal/views_initial.dart';
+import 'package:mi_app/feature/home/presentation/views/views_loading.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,9 +13,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: View_initial(),
+      home: View_loading(),
     );
   }
 }
+
 
 
