@@ -14,12 +14,26 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: View_failure(),
+      home: Scaffold(
+        backgroundColor:  const Color.fromARGB(255, 240, 224, 224),
+        appBar: AppBar(
+          backgroundColor: Colors.brown,
+          centerTitle: true,
+          title: const Text("𝒞𝒶𝒻𝑒𝑀𝒶𝓍",
+          style: TextStyle(color: Colors.white),
+        ),
+      ),
+      body: Center(
+        child: Container(
+          height: 400,
+          width: 400,
+          decoration: BoxDecoration(
+            color: Colors.brown, 
+            borderRadius: BorderRadius.circular(20),
+          ),
+        ),
+      )
+      ),
     );
   }
 }
-
-
-
-
-
