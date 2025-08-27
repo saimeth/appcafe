@@ -1,7 +1,7 @@
 class CoffeeService {
-  final String nombre;
-  final int precio;
-  final String imagen;
+  final String? nombre;
+  final int? precio;
+  final String? imagen;
 
   const CoffeeService({
     required this.nombre,

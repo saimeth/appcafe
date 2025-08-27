@@ -9,8 +9,8 @@ Future<List<CoffeeService>> fetchCoffes() async {
 
   if (response.statusCode == 200) {
     final data=jsonDecode(response.body);
-    final List<dynamic> Coffe=data["coffe"];
-    return Coffe.map((e) => CoffeeService.fromJson(e)).toList();
+    final List<dynamic> coffeeService=data["coffe"];
+    return coffeeService.map((e) => CoffeeService.fromJson(e)).toList();
   } else {
     throw Exception("Error al cargar cafés: ${response.statusCode}");
   }

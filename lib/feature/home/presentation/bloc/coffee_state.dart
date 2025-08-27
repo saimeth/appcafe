@@ -8,12 +8,12 @@ sealed class CoffeeState extends Equatable {
 }
 
 final class CoffeeInitial extends CoffeeState {
-  final List<CoffeeService>?coffe;
+  final List<CoffeeService>?coffeeService;
 
-  const CoffeeInitial({this.coffe});
+  const CoffeeInitial({this.coffeeService});
 
   @override
-  List<Object?> get props=>[coffe];
+  List<Object?> get props=>[coffeeService];
 }
 
 final class CoffeeLoading extends CoffeeState{}

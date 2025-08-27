@@ -17,7 +17,7 @@ class CoffeeBloc extends Bloc<CoffeeEvent, CoffeeState> {
     emit(CoffeeLoading());
     try{
       final List<CoffeeService> coffeeService=await fetchCoffes();
-      emit(CoffeeInitial(coffe:coffeeService));
+      emit(CoffeeInitial(coffeeService:coffeeService));
     }catch(e){
       emit(CoffeeFailure());
 
