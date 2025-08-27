@@ -1,16 +1,16 @@
-class Coffee {
+class CoffeeService {
   final String nombre;
   final int precio;
   final String imagen;
 
-  Coffee({
+  const CoffeeService({
     required this.nombre,
     required this.precio,
     required this.imagen,
   });
 
-  factory Coffee.fromJson(Map<String, dynamic> json) {
-    return Coffee(
+  factory CoffeeService.fromJson(Map<String, dynamic> json) {
+    return CoffeeService(
       nombre: json['nombre'],
       precio: json['precio'],
       imagen: json['imagen'],

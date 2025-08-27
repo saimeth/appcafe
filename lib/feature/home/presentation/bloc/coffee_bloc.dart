@@ -7,28 +7,23 @@ part 'coffee_event.dart';
 part 'coffee_state.dart';
 
 class CoffeeBloc extends Bloc<CoffeeEvent, CoffeeState> {
-  final CoffeeService coffeeService; //para obtener los cafés desde el JSON.
+  final List<CoffeeService>? coffeeService;
 
+  CoffeeBloc(this.coffeeService):super(CoffeeLoading()){
+    on<CoffeeLoad>(_onCoffeeLoad);
 
-  CoffeeBloc({required this.coffeeService}) : super(CoffeeInitial()) {
-    on<CoffeeEvent>((event, emit) async {
-      emit(CoffeeLoading());
-        try {
-          final cafes = await coffeeService.fetchCoffees();
-          emit(CoffeeLoaded(cafes));
-        } catch (e) { //si sale un error mostrar:
-            emit(CoffeeFailure());
-          }
-    });
-    //eventos para cuando se actualice
-    on<updateCoffees>((event, emit) async {
-      emit(CoffeeLoading());
-      try {
-        final cafes = await coffeeService.updateCoffees();
-        emit(CoffeeLoaded(cafes));
-      } catch (e) {
-        emit(CoffeeFailure());
-      }
-    });
   }
+  Future<void>_onCoffeeLoad(CoffeeLoad event,Emitter<CoffeeState>emit,)async{
+    emit(CoffeeLoading());
+    try{
+      final List<CoffeeService> coffeeService=await fetchCoffes();
+      emit(CoffeeInitial(coffe:coffeeService));
+    }catch(e){
+      emit(CoffeeFailure());
+
+    }
+
+  }
+
+  
 }

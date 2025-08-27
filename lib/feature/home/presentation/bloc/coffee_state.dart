@@ -4,20 +4,22 @@ sealed class CoffeeState extends Equatable {
   const CoffeeState();
   
   @override
-  List<Object> get props => [];
+  List<Object?> get props => [];
 }
 
-final class CoffeeInitial extends CoffeeState {}
+final class CoffeeInitial extends CoffeeState {
+  final List<CoffeeService>?coffe;
+
+  const CoffeeInitial({this.coffe});
+
+  @override
+  List<Object?> get props=>[coffe];
+}
 
 final class CoffeeLoading extends CoffeeState{}
 
 final class CoffeeFailure extends CoffeeState{}
 
 final class CoffeeLoaded extends CoffeeState {
-  final List<Coffee> cafes;
-
-  const CoffeeLoaded(this.cafes);
-
-  @override
-  List<Object> get props => [cafes];
+  
 }

@@ -6,6 +6,5 @@ sealed class CoffeeEvent extends Equatable {
   @override
   List<Object> get props => [];
 }
-class views_loading extends CoffeeEvent{}
+class CoffeeLoad extends CoffeeEvent{}
 
-class updateCoffees extends CoffeeEvent{} // evento para actualiar los cafés
